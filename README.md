@@ -14,9 +14,9 @@ El conjunto de datos original contiene 10,000 registros de métricas de salud de
 
 ## Descripción del Proceso de Limpieza
 
-El proceso inició con un diagnóstico para identificar todos los errores del dataset. Posteriormente, se ejecutó un script para estandarizar datos categóricos, corregir valores no numéricos y marcar outliers fisiológicamente improbables. Finalmente, se ajustaron los tipos de datos a su formato correcto y se eliminaron todas las filas con valores nulos, así como los registros duplicados. Esta estricta estrategia de limpieza redujo el conjunto de datos de 10,000 a 8,295 registros, garantizando que solo la información completa y válida permaneciera para el análisis.
+El proceso inició con un diagnóstico para identificar todos los errores del dataset. Posteriormente, se ejecutó un script para estandarizar datos categóricos, corregir valores no numéricos y marcar outliers fisiológicamente improbables. Finalmente, se ajustaron los tipos de datos a su formato correcto y se eliminaron todas las filas con valores nulos, así como los registros duplicados.
 
-## Hallazgos Principales (del Diagnóstico)
+## Hallazgos Principales del Diagnóstico
 
 * **Datos Nulos Generalizados:** Todas las columnas del dataset presentaban una cantidad considerable de valores nulos, indicando registros incompletos.
 * **Tipos de Datos Incorrectos:** Columnas como User ID, Sleep Duration (hours) y Stress Level tenían tipos de datos float u object, cuando deberían ser de tipo entero o numérico para un análisis correcto.
