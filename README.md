@@ -14,16 +14,7 @@ El conjunto de datos original contiene 10,000 registros de métricas de salud de
 
 ## Descripción del Proceso de Limpieza
 
-Se realizó una limpieza exhaustiva del conjunto de datos, comenzando con una fase de diagnóstico para obtener una "radiografía" completa del estado de los datos. Basándose en los hallazgos de esta primera etapa, se ejecutó un script de limpieza con los siguientes pasos:
-
-1.  **Estandarización de datos categóricos:** Se corrigieron inconsistencias y errores de tipeo en la columna Activity Level (ej. actve a active, seddentary a sedentary y unificación de formatos).
-2.  **Manejo de valores no numéricos:** Se identificaron y trataron valores de texto como "ERROR" y "Very High" en columnas numéricas. Estos valores fueron convertidos a un formato numérico o marcados como nulos (NaN) para su posterior eliminación.
-3.  **Identificación y tratamiento de outliers:** Se marcaron como nulos los valores atípicos fisiológicamente improbables, como un ritmo cardíaco superior a 220 BPM, considerándolos errores de medición.
-4.  **Eliminación de datos nulos:** Se aplicó una estrategia de eliminación estricta, descartando cualquier fila que contuviera al menos un valor nulo después de los pasos anteriores.
-5.  **Corrección de tipos de datos:** Se ajustaron los tipos de datos de las columnas para que coincidieran con su naturaleza (ej. User ID y Step Count se convirtieron a enteros).
-6.  **Eliminación de duplicados:** Finalmente, se eliminaron todos los registros duplicados para asegurar la unicidad de los datos.
-
-Como resultado, el dataset se redujo de 10,000 a 8,295 registros, garantizando que solo la información completa, consistente y válida permaneciera.
+El proceso inició con un diagnóstico para identificar todos los errores del dataset. Posteriormente, se ejecutó un script para estandarizar datos categóricos, corregir valores no numéricos y marcar outliers fisiológicamente improbables. Finalmente, se ajustaron los tipos de datos a su formato correcto y se eliminaron todas las filas con valores nulos, así como los registros duplicados. Esta estricta estrategia de limpieza redujo el conjunto de datos de 10,000 a 8,295 registros, garantizando que solo la información completa y válida permaneciera para el análisis.
 
 ## Hallazgos Principales (del Diagnóstico)
 
@@ -32,7 +23,7 @@ Como resultado, el dataset se redujo de 10,000 a 8,295 registros, garantizando q
 * **Valores No Numéricos:** Se encontraron textos como "ERROR" y "Very High" en columnas que debían ser puramente numéricas, lo que impedía realizar cálculos matemáticos.
 * **Inconsistencias Categóricas:** La columna Activity Level contenía errores de tipeo y formatos inconsistentes (Seddentary vs. Sedentary, Highly Active vs. Highly_Active, Actve), dificultando la agrupación de datos.
 * **Valores Atípicos (Outliers):** Se detectó un valor máximo de ritmo cardíaco (Heart Rate (BPM)) de 296.59, el cual es fisiológicamente improbable y apunta a un claro error de medición.
-
+Como resultado, el dataset se redujo de 10,000 a 8,295 registros, garantizando que solo la información completa, consistente y válida permaneciera.
 ## Librerías utilizadas
 
 Para llevar a cabo este proceso de limpieza y análisis, fue necesario utilizar las siguientes librerías:
